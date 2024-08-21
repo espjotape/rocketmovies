@@ -1,9 +1,11 @@
 import { Container } from "./styles"
 
+import { Header } from "../../components/Header"
+
 export default function Details(){
   return(
     <Container>
-      <h1>Hello World!</h1>
+      <Header></Header>
     </Container>
   )
 }
