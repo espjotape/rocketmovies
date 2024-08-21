@@ -6,6 +6,7 @@ export default {
 
     PINK: "FF859B",
     PURPLE: "948F99",
-    BROWN: "282124"
+    BROWN: "282124",
+    WHITE: "F4EDE8",
   }
 }
