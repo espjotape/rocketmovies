@@ -11,6 +11,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   > h1 {
     font-size: 24px;
