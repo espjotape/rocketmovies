@@ -6,6 +6,6 @@ export const Container = styled.section`
     font-size: 36px;
     font-weight: 600;
     color: ${({ theme }) => theme.COLORS.WHITE};
-    margin-bottom: 8px;
+    margin-bottom: 24px;
  }
 `
