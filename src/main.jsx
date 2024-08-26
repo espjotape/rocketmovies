@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Profile } from "./pages/Profile";
+import { Home } from "./pages/Home";
 
 
 import GlobalStyles  from "./styles/global";
@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Profile />
+      <Home />
     </ThemeProvider>
   </React.StrictMode>
 )

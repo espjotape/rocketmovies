@@ -4,6 +4,8 @@ export default {
     BACKGROUND_800: "#1C1B1E",
     BACKGROUND_900: "0D0C0F",
 
+    GRAY: "#999591",
+
     PINK: "#FF859B",
     PURPLE: "#948F99",
     BROWN: "#282124",
