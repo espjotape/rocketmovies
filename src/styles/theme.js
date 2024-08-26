@@ -8,5 +8,6 @@ export default {
     PURPLE: "#948F99",
     BROWN: "#282124",
     WHITE: "#F4EDE8",
+    ROSE: "rgba(255, 133, 155, 0.05)",
   }
 }
