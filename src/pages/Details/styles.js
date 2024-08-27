@@ -10,6 +10,7 @@ export const Container = styled.div`
   "content";
 
   > main {
+    
     grid-area: content;
     width:100%;
     overflow-y: hidden;

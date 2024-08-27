@@ -25,8 +25,6 @@ export const Container = styled.button`
     margin-top: 8px;
   }
 
-
-
   > footer {
     display: flex;
     margin-top: 15px;
