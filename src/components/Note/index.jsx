@@ -1,6 +1,6 @@
 import { Container } from "./styles.js"
 import { Tags } from "../Tags"
-import { Rating } from "../Rating/index.jsx"
+
 
 export function Note({ data, ...rest}){
   return(
