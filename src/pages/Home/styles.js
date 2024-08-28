@@ -5,34 +5,39 @@ export const Container = styled.div`
   height: 100vh;
   
   display: grid;
-  grid-template-rows: 90px auto ;
+  grid-template-rows: 110px auto ;
   grid-template-areas: 
   "header"
   "content";
-
+  
   > main {
-    width: 80%;
-    margin: 0 auto;
-    
+    grid-area: content;
+    margin: 0 123px;
     overflow-y: hidden;
-    padding: 0px 30px;
+  }   
+`
+export const Content = styled.div`
+ grid-area: content;
+  overflow-y: auto;
 
-    > div {
-      overflow-y: scroll;
-      padding: 0 6px;
-    }
+> section {
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
 
-    > div::-webkit-scrollbar {
+> section::-webkit-scrollbar {
     width: 0.8rem;
   }
 
-    > div::-webkit-scrollbar-thumb {
+> section::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 0.8rem;
   }
-    }
-     
-`
+`;
 
 export const NewNote = styled.div`
   display: flex;
@@ -58,14 +63,3 @@ export const NewNote = styled.div`
   }
 `
 
-
-export const Content = styled.div`
- width: 98%;
- margin: 0 auto;
- grid-area: content;
-
- overflow-y: auto;
- padding: 0 6px;
-
-  
-`
