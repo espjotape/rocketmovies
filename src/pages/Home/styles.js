@@ -18,7 +18,7 @@ export const Container = styled.div`
 `
 export const Content = styled.div`
  grid-area: content;
-  overflow-y: auto;
+ overflow-y: auto;
 
 > section {
   max-height: 500px;

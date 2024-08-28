@@ -13,36 +13,37 @@ export function New(){
     <Container>
       <Header />
       <main>
-          <div className="btn">
-            <FaArrowLeft />
-            <ButtonText title="Voltar" />
-          </div>
-          <h1>Novo Filme</h1>
-
+        <section>
           <Content>
-            <section>
-              <Input type="text" placeholder="Titulo"/>
-              <Input type="text" placeholder="Sua nota (de 0 a 5)"/>
-            </section>
-            <Textarea placeholder="Observações"/>
+            <div className="btn">
+                <FaArrowLeft />
+                <ButtonText title="Voltar" />
+            </div>
+              <h1>Novo Filme</h1>
+              <section>
+                <Input type="text" placeholder="Titulo"/>
+                <Input type="text" placeholder="Sua nota (de 0 a 5)"/>
+              </section>
+              <Textarea placeholder="Observações"/>
+              
+              <Footer>
+                  <h3>Marcadores</h3>
+                  <div className="tags">
+
+                  <NoteItem placeholder="Novo Link" value="react"/>
+                  <NoteItem placeholder="Novo Link" isNew/>
+
+                  </div>
+                  <section>
+
+                  <button className="delete"><p>Excluir filme</p></button>
+                  <button className="save"><p>Salvar alterações</p></button>
+                  </section>
+              </Footer>
           </Content>
 
-          <Footer>
-            <h3>Marcadores</h3>
-            <div className="tags">
-
-            <NoteItem placeholder="Novo Link" value="react"/>
-            <NoteItem placeholder="Novo Link" isNew/>
-
-            </div>
-            <section>
-
-            <button className="delete"><p>Excluir filme</p></button>
-            <button className="save"><p>Salvar alterações</p></button>
-            </section>
-          </Footer>
-          
-        </main>
+        </section>
+      </main>
     
     </Container>
   )

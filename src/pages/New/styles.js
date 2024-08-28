@@ -11,36 +11,61 @@ export const Container = styled.div`
   "content";
 
   > main {
-    width: 80%;
-    margin: 40px auto;
+    grid-area: content;
+    width: 1350px;
+    margin: 0 auto;
+    overflow-y: hidden;
 
-    > .btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 20px;
-      
+    > section {
+      max-height: 90%;
+      overflow-y: auto;
+      padding: 0 20px;
+    }
+
+    > section::-webkit-scrollbar {
+      padding-top: 10px;
+      width: 0.8rem;
+    }
+
+    > section::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.COLORS.PINK};
+      border-radius: 0.8rem;
+    }
+
+  }
+`
+
+export const Content = styled.div`
+  grid-area: content;
+  
+  margin: 40px auto;
+  
+  >h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  > .btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 20px;
+        
       > svg {
         height: 12px;
         width: 12px;
 
         color: ${({ theme }) => theme.COLORS.PINK};
       }
-    }
   }
 
-`
-
-export const Content = styled.div`
-  grid-area: content;
-  width: 100%;
-  margin: 40px auto;
-  
   > section {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 20px;
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+    
   }
+ 
 `
 export const Footer = styled.div`
   grid-area: content;
