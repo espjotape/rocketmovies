@@ -7,7 +7,7 @@ export const Container = styled.button`
   border: none;
   padding: 32px;
   border-radius: 16px;
-  
+  margin-top: 20px;
   
 
   > h1 {
