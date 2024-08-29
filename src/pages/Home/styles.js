@@ -14,6 +14,7 @@ export const Container = styled.div`
     grid-area: content;
     margin: 0 123px;
     overflow-y: hidden;
+    padding-bottom: 10px;
   }   
 `
 export const Content = styled.div`
@@ -21,7 +22,8 @@ export const Content = styled.div`
  overflow-y: auto;
 
 > section {
-  max-height: 500px;
+  
+  max-height: 600px;
   overflow-y: auto;
   padding: 0 20px;
   display: flex;
@@ -30,25 +32,26 @@ export const Content = styled.div`
 }
 
 > section::-webkit-scrollbar {
-    width: 0.8rem;
+    width: 7px;
   }
 
 > section::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.COLORS.PINK};
-    border-radius: 0.8rem;
+    border-radius: 8px;
   }
 `;
 
 export const NewNote = styled.div`
+  grid-area: content;
   display: flex;
   width: 100%;
   justify-content: flex-end;
   margin-top:20px;
   margin-bottom:20px;
+  height: 58px; 
+  
 
   > button {
-    height: 48px; 
-    
     border: none;
     background-color: ${({ theme }) => theme.COLORS.PINK};
     color: ${({ theme }) => theme.COLORS.BACKGROUND_800};

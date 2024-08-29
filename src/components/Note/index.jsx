@@ -1,5 +1,5 @@
 import { Container } from "./styles.js"
-import { Tags } from "../Tags"
+import { TagsHome } from "../TagsHome"
 
 
 export function Note({ data, ...rest}){
@@ -13,7 +13,7 @@ export function Note({ data, ...rest}){
         <footer>
           {
             data.tags.map(tag => 
-            <Tags
+            <TagsHome
             key={tag.id} 
             title={tag.name} 
             />)
