@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Container, Content, Footer } from "./styles"
 import { Header } from "../../components/Header"
 import { ButtonText } from "../../components/ButtonText"
@@ -7,7 +9,6 @@ import { NoteItem } from "../../components/NoteItem"
 
 import { FaArrowLeft } from "react-icons/fa";
 
-
 export function New(){
   return(
     <Container>
@@ -15,10 +16,10 @@ export function New(){
       <main>
         <section>
           <Content>
-            <div className="btn">
+            <Link to="/" className="btn">
                 <FaArrowLeft />
                 <ButtonText title="Voltar" />
-            </div>
+            </Link>
               <h1>Novo Filme</h1>
               <section>
                 <Input type="text" placeholder="Titulo"/>

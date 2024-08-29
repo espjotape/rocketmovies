@@ -1,5 +1,7 @@
 import styled from "styled-components"
 
+import { Link } from "react-router-dom"
+
 export const Container = styled.header`
   height: 100vh;
   width: 100%;
@@ -14,11 +16,25 @@ export const Container = styled.header`
     align-items: center;
     padding: 0 120px;
 
-    svg, p{
-      color: ${({ theme }) => theme.COLORS.PINK};
-      font-size: 15px;
-    }
+   
   }
+`
+
+export const Return = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+
+  p {
+    text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.PINK};
+    font-size: 15px;
+  }
+
+  svg {
+    color: ${({ theme }) => theme.COLORS.PINK};
+    font-size: 15px;
+  };
 `
 
 export const Form = styled.form`

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const Container = styled.header`
   width: 100%;
   height: 105px;
@@ -45,7 +47,7 @@ export const Container = styled.header`
 }
 `
 
-export const Profile = styled.div`
+export const Profile = styled(Link)`
   display: flex;
   align-items: center;
   
@@ -63,8 +65,9 @@ export const Profile = styled.div`
 
     span {
       font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
-      font-weight: 300
+      color: ${({ theme }) => theme.COLORS.GRAY};
+      font-weight: 300;
+      
     }
 
     strong {

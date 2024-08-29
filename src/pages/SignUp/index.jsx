@@ -1,5 +1,7 @@
 import { Container, Form, Background } from "./styles";
 
+import { Link } from "react-router-dom";
+
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
@@ -35,10 +37,10 @@ export function SignUp(){
 
         <Button title="Entrar"/>
 
-        <a href="#">
+        <Link to="/">
           <FaArrowLeft />
           Voltar para o login
-        </a>
+        </Link>
        </Form>
 
         <Background />

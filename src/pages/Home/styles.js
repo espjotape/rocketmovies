@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -13,7 +15,7 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     margin: 0 123px;
-    max-width: 113.7rem;
+    
     overflow-y: hidden;
     padding-bottom: 10px;
 
@@ -43,7 +45,7 @@ export const Content = styled.div`
   }
 `;
 
-export const NewNote = styled.div`
+export const NewNote = styled(Link)`
   grid-area: content;
   display: flex;
   width: 100%;
@@ -54,8 +56,8 @@ export const NewNote = styled.div`
   
 
   > button {
-    border: none;
     background-color: ${({ theme }) => theme.COLORS.PINK};
+    border: none;
     color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     border-radius: 10px;
     

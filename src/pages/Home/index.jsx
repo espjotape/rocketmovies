@@ -1,8 +1,8 @@
 import { Container, Content, NewNote } from "./styles"
 
+
 import { Header } from "./../../components/Header"
 import { Note } from "./../../components/Note"
-
 
 import { FiPlus } from "react-icons/fi"
 
@@ -11,7 +11,7 @@ export function Home(){
     <Container>
       <Header />
       <main>
-        <NewNote>
+        <NewNote to="/new">
           <button>
             <FiPlus />
              Adicionar Nota

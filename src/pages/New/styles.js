@@ -24,12 +24,12 @@ export const Container = styled.div`
 
     > section::-webkit-scrollbar {
       padding-top: 10px;
-      width: 0.8rem;
+      width: 6px;
     }
 
     > section::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => theme.COLORS.PINK};
-      border-radius: 0.8rem;
+      border-radius: 8px;
     }
 
   }

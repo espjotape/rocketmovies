@@ -1,4 +1,4 @@
-import { Container, Form ,Avatar } from "./styles";
+import { Container, Form ,Avatar, Return } from "./styles";
 
 import { FiArrowLeft, FiCamera ,FiUser,FiMail, FiLock } from 'react-icons/fi';
 
@@ -8,10 +8,14 @@ import { Button } from "../../components/Button"
 export function Profile(){
   return(
     <Container>
+
       <header>
-      <FiArrowLeft />
-      <p>Voltar</p>
+        <Return to="/">
+          <FiArrowLeft />
+          <p to="/">Voltar</p>
+        </Return>
       </header>
+
       <Avatar>
         <img src="https://github.com/espjotape.png" alt="foto de úsuario" />
         <label htmlFor="avatar">
@@ -21,6 +25,7 @@ export function Profile(){
           type="file" />
         </label>
       </Avatar>
+
       <Form>
         <Input placeholder="Nome" type="text" icon={FiUser}/>
         <Input placeholder="E-mail" type="email" icon={FiMail}/>
