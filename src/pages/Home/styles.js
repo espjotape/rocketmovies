@@ -13,8 +13,10 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     margin: 0 123px;
+    max-width: 113.7rem;
     overflow-y: hidden;
     padding-bottom: 10px;
+
   }   
 `
 export const Content = styled.div`
