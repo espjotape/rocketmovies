@@ -68,6 +68,7 @@ export const Profile = styled(Link)`
       color: ${({ theme }) => theme.COLORS.GRAY};
       font-weight: 300;
       
+      
     }
 
     strong {
