@@ -13,6 +13,8 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
   > h1 {
@@ -22,7 +24,7 @@ export const Container = styled.header`
   }
 
   .search{
-    width: 60%;
+    flex-grow: 1;
     display: flex;
     align-items: center;
 
@@ -63,18 +65,22 @@ export const Profile = styled(Link)`
     align-items: flex-end;
     margin-right: 14px;
 
-    span {
-      font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY};
-      font-weight: 300;
-      
-      
-    }
-
     strong {
       font-size: 18px;
       color: ${({ theme }) => theme.COLORS.WHITE}
     }
   }
+`
+export const Logout = styled.button`
+  font-size: 14px;
+  color: ${({ theme }) => theme.COLORS.GRAY};
+  font-weight: 300;
+
+  border: none;
+  background: none;
+
+  position: absolute;
+  bottom: 1.5rem;
+  right: 12rem;
 `
 

@@ -1,6 +1,9 @@
-import { Container, Profile } from "./styles";
+import { Container, Profile, Logout } from "./styles";
+import { useAuth } from "../../hooks/auth"
 
 export function Header(){
+  const { signOut } = useAuth()
+  
   return(
     <Container>
       <h1>RocketMovies</h1>
@@ -12,10 +15,11 @@ export function Header(){
       <Profile to="/profile">
         <div>
           <strong>João Pedro</strong>
-          <span>sair</span>
         </div>
         <img src="https://github.com/espjotape.png" alt="Foto do úsuario"/>
       </Profile>
+
+      <Logout onClick={signOut}>sair</Logout>
     </Container>
   )
 }
