@@ -35,6 +35,17 @@ export function New(){
   }
 
   async function handleNewNote(){
+
+    if (!title) {
+      return alert("Digite um título para a nota!");
+    }
+
+
+    if (newTag) {
+      return alert("Você deixou uma tag no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.", { autoClose: 10000 });
+    }
+
+
     await api.post("/notes", {
       title,
       description,
