@@ -1,8 +1,12 @@
 import { Container, Profile, Logout } from "./styles";
 import { useAuth } from "../../hooks/auth"
 
+import { api } from "../../services/api";
+
 export function Header(){
-  const { signOut } = useAuth()
+  const { signOut, user } = useAuth()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
   
   return(
     <Container>
@@ -14,9 +18,9 @@ export function Header(){
       
       <Profile to="/profile">
         <div>
-          <strong>João Pedro</strong>
+          <strong>{user.name}</strong>
         </div>
-        <img src="https://github.com/espjotape.png" alt="Foto do úsuario"/>
+        <img src={avatarUrl} alt={user.name}/>
       </Profile>
 
       <Logout onClick={signOut}>sair</Logout>

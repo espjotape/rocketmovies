@@ -57,6 +57,7 @@ export const Profile = styled(Link)`
     height: 56px;
     width: 56px;
     border-radius: 50%;
+    object-fit: cover;
   }
 
   > div {
