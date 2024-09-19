@@ -19,6 +19,10 @@ export function New(){
     setNewTag("")
   }
 
+  function handleRemoveTag(deleted){
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
+  }
+
   return(
     <Container>
       <Header />
@@ -41,19 +45,15 @@ export function New(){
                   <div className="tags">
 
                   {
-                    tags.map((link, index) => (
-
+                    tags.map((tag, index) => (
                       <NoteItem 
-                        //isNew
                         key={String(index)}
                         placeholder="Novo Link" 
-                        value={link}
-                        onClick={() => { }}
-                        />
+                        value={tag}
+                        onClick={() => handleRemoveTag(tag)}
+                      />
                     )
                 )}
-                   
-                
                   <NoteItem 
                   isNew
                   placeholder="Novo Link" 
@@ -64,8 +64,8 @@ export function New(){
 
                   </div>
                   <section>
-                    <button className="delete"><p>Excluir filme</p></button>
-                    <button className="save"><p>Salvar alterações</p></button>
+                    <button className="delete" type="button"><p>Excluir filme</p></button>
+                    <button className="save" type="button"><p>Salvar alterações</p></button>
                   </section>
               </Footer>
           </Content>
