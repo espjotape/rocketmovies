@@ -16,7 +16,7 @@ function AuthProvider({ children }) {
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
       localStorage.setItem("@rocketnotes:token", token)
 
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      api.defaults.headers.common["Authorization"] = "Bearer " + token;
 
 
       setData({user, token })
@@ -43,7 +43,9 @@ function AuthProvider({ children }) {
 
     if( token && user) {
       // Jeito que o prof usou o código porem no vscode dá um erro de = "The computed expression can be simplified without the use of a string literal.biomelint/complexity/useLiteralKeys"
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      //api.defaults.headers.authorization = `Bearer ${token}`;
+
+      api.defaults.headers.common["Authorization"] = "Bearer " + token;
 
       // Jeito que o chatgpt sugeriu corrigir
       //api.defaults.headers.common["Authorization"] = "Bearer " + token;
@@ -55,11 +57,28 @@ function AuthProvider({ children }) {
     }
   }, [])
 
+  async function updateProfile({ user }){
+    try{
+      await api.put("/users", user)
+      localStorage.setItem("@rocketnotes:user", JSON.stringify(user))
+
+      setData({ user, token: data.token })
+      alert("Perfil atualizado!")
+
+    }catch (error) {
+      if(error.response){
+        alert(error.response.data.message)
+      }else{
+        alert("Não foi possível atualizar o perfil.")
+      }
+    }
+  }
   return(
     <AuthContext.Provider value={{ 
       signIn,
-      user: data.user,
-      signOut
+      signOut,
+      updateProfile,
+      user: data.user
     }}
     >
       {children}
@@ -69,7 +88,7 @@ function AuthProvider({ children }) {
 
 function useAuth(){
   const context = useContext(AuthContext)
- return context
+  return context
 }
 
 export { AuthProvider , useAuth }

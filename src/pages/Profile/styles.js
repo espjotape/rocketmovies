@@ -72,7 +72,8 @@ export const Avatar = styled.div`
     position: absolute;
     right: 3px;
     bottom: 5px;
-    
+    cursor: pointer;
+
     input {
       display: none;
     }
