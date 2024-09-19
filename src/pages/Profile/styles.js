@@ -38,10 +38,10 @@ export const Return = styled(Link)`
 `
 
 export const Form = styled.form`
-  margin: 50px auto 0;
+  margin: 20px auto 0;
   max-width: 340px;
 
-  div:nth-child(3){
+  div:nth-child(4){
     margin-top: 24px;
   }
 `

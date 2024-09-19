@@ -37,6 +37,7 @@ export function Profile(){
         </Return>
       </header>
 
+      <Form>
       <Avatar>
         <img src="https://github.com/espjotape.png" alt="foto de úsuario" />
         <label htmlFor="avatar">
@@ -47,7 +48,6 @@ export function Profile(){
         </label>
       </Avatar>
 
-      <Form>
         <Input placeholder="Nome" type="text" icon={FiUser} value={name} onChange={e => setName(e.target.value)}/>
         <Input placeholder="E-mail" type="email" icon={FiMail} value={email} onChange={e => setEmail(e.target.value)}/>
         <Input placeholder="Senha atual" type="password" icon={FiLock} onChange={e => setPasswordOld(e.target.value)}/>
