@@ -11,7 +11,7 @@ import { Section } from "../../components/Section"
 export default function Details(){
   return(
     <Container>
-      <Header></Header>
+      <Header/>
       <main>
           <div>
             <Content>
