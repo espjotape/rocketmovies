@@ -49,6 +49,13 @@ export const Container = styled.header`
 }
 `
 
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 6.4rem;
+  flex-grow: 1;
+`;
+
 export const Profile = styled(Link)`
   display: flex;
   align-items: center;

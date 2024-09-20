@@ -1,61 +1,64 @@
 import { Container, Content, NewNote } from "./styles"
 
-
 import { Header } from "./../../components/Header"
+import { Input } from "./../../components/Input"
 import { Note } from "./../../components/Note"
 
+import { api } from "../../services/api"
+
 import { FiPlus } from "react-icons/fi"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export function Home(){
+  
+  const [ notes, setNotes ] = useState([])
+  const [ search, setSearch ] = useState("")
+
+  const navigate = useNavigate()
+
+  //function handleDetails(id) {
+  //  navigate(`/details/${id}`)
+  //}
+
+  useEffect(() => {
+    const user_id = localStorage.getItem('user_id')
+    async function fetchNotes() {
+      const response = await api.get(`/notes?user_id=${user_id}&title=${search}`)
+      setNotes(response.data)
+    }
+
+    fetchNotes()
+  }, [search])
+
   return(
     <Container>
-      <Header />
+      <Header>
+        <Input
+          placeholder="Pesquisar pelo título"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </Header>
       <main>
         <NewNote to="/new">
-          <button>
+          <button type="button">
             <FiPlus />
              Adicionar Nota
             </button>
           </NewNote>
           <Content>
-           <section>
-           <Note data={{ 
-              title: 'Interrestelar', 
-              paraghaph: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As "missões Lázaro" enviadas anos antes identificaram três planetas potencialmente habitáveis orbitando o buraco negro...',
-              tags: [
-                { id : '1' , name: 'Ficção Científica'},
-                { id : '2' , name: 'Ação'},
-              ]
-              }}
-            />
-            <Note data={{ 
-              title: 'Interrestelar', 
-              paraghaph: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As "missões Lázaro" enviadas anos antes identificaram três planetas potencialmente habitáveis orbitando o buraco negro...',
-              tags: [
-                { id : '1' , name: 'Ficção Científica'},
-                { id : '2' , name: 'Ação'},
-              ]
-            }}
-            />
-            <Note data={{ 
-                title: 'Interrestelar', 
-                paraghaph: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As "missões Lázaro" enviadas anos antes identificaram três planetas potencialmente habitáveis orbitando o buraco negro...',
-                tags: [
-                  { id : '1' , name: 'Ficção Científica'},
-                  { id : '2' , name: 'Ação'},
-                ]
-              }}
-            />
-            <Note data={{ 
-                title: 'Interrestelar', 
-                paraghaph: 'Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de Cooper, acredita que seu quarto está assombrado por um fantasma que tenta se comunicar com ela. Pai e filha descobrem que o "fantasma" é uma inteligência desconhecida que está enviando mensagens codificadas através de radiação gravitacional, deixando coordenadas em binário que os levam até uma instalação secreta da NASA liderada pelo professor John Brand. O cientista revela que um buraco de minhoca foi aberto perto de Saturno e que ele leva a planetas que podem oferecer condições de sobrevivência para a espécie humana. As "missões Lázaro" enviadas anos antes identificaram três planetas potencialmente habitáveis orbitando o buraco negro...',
-                tags: [
-                  { id : '1' , name: 'Ficção Científica'},
-                  { id : '2' , name: 'Ação'},
-                ]
-            }}
-          />
-           </section>
+            <section>
+              {
+                notes.map(note => (
+                  <Note
+                    key={String(note.id)}
+                    data={note}
+                    onClick={() => (handleDetails(note.id))}
+                  />
+                ))
+              }
+              
+            </section>
           </Content>
       </main>
     </Container>
