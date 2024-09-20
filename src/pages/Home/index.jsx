@@ -17,9 +17,9 @@ export function Home(){
 
   const navigate = useNavigate()
 
-  //function handleDetails(id) {
-  //  navigate(`/details/${id}`)
-  //}
+  function handleDetails(id) {
+   navigate(`/details/${id}`)
+  }
 
   useEffect(() => {
     const user_id = localStorage.getItem('user_id')

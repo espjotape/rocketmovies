@@ -49,17 +49,35 @@ export const Content = styled.div`
     text-align: justify;
     margin-bottom: 80px;
   } 
+
+  > .info{
+      margin-top:24px;
+
+      
+
+      div {
+        display: flex;
+        align-items: center;
+        
+        h1 {
+          font-size: 40px;
+          
+          margin-right: 20px;
+        }
+      } 
+  }
 `
 export const Avatar = styled.div`
     display: flex;
     gap: 10px;
     align-items: center;
     margin-bottom: 40px;
-
+    margin-top:24px;
   img {
     width : 25px;
     height: 25px;
-    border-radius: 50%
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   > svg {

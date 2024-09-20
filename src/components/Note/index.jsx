@@ -7,7 +7,7 @@ export function Note({ data, ...rest}){
     <Container {...rest}>
       <h1>{data.title}</h1>
       
-      <Rating grade={data.rating} isBigSize={false}/>
+      <Rating grade={data.rating} isbigSize={false}/>
 
       <p>{data.paraghaph}</p>
       {
