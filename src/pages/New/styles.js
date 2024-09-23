@@ -45,7 +45,7 @@ export const Content = styled.div`
     margin-bottom: 30px;
   }
 
-  > .btn {
+  > header {
         display: flex;
         align-items: center;
         gap: 6px;

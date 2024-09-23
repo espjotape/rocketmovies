@@ -44,6 +44,19 @@ export const Content = styled.div`
     align-self: flex-start;
   }
 
+  > header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+      > svg {
+        height: 12px;
+        width: 12px;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+      }
+  }
+
   .text {
     margin-top: 40px;
     text-align: justify;

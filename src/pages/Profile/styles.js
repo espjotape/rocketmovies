@@ -16,8 +16,27 @@ export const Container = styled.header`
     align-items: center;
     padding: 0 120px;
 
-   
+    > button {
+      border: none;
+      background: none;
+      gap: 6px;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+
+      p {
+        color: ${({ theme }) => theme.COLORS.PINK}
+      }
+
+       svg {
+        height: 15px;
+        width: 15px;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+      }
+    }
   }
+
 `
 
 export const Return = styled(Link)`

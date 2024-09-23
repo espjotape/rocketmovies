@@ -30,7 +30,7 @@ export default function Details(){
 
 
   function handleBack(){
-    navigate("/")
+    navigate(-1)
   } 
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Details(){
     const confirm = window.confirm("Você quer realmente remover essa nota")
     if(confirm) {
       await api.delete(`/notes/${params.id}`)
-      navigate("/")
+      navigate(-1)
     }
 
   }
@@ -57,10 +57,10 @@ export default function Details(){
         <main>
           <div>
             <Content>
-              <ButtonText title="Voltar" onClick={handleBack}>
-                <FaArrowLeft/> 
-                Voltar
-              </ButtonText>
+            <header>
+              <FaArrowLeft />
+              <ButtonText onClick={handleBack} title="Voltar"/>
+            </header>
               {
                 data.tags && (
                   <section className="info">

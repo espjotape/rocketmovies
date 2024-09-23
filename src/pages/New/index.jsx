@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
@@ -53,8 +52,12 @@ export function New(){
     })
 
     alert("Nota criada com sucesso!")
-    navigate("/")
+    navigate(-1)
   }
+
+  function handleBack(){
+    navigate(-1)
+  } 
 
   return(
     <Container>
@@ -62,10 +65,10 @@ export function New(){
       <main>
         <section>
           <Content>
-            <Link to="/" className="btn">
+            <header>
                 <FaArrowLeft />
-                <ButtonText title="Voltar" />
-            </Link>
+                <ButtonText onClick={handleBack} title="Voltar"/>
+            </header>
               <h1>Novo Filme</h1>
               <section>
                 <Input
