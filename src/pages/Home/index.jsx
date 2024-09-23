@@ -1,24 +1,22 @@
-import { Container, Content, NewNote } from "./styles"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FiPlus } from "react-icons/fi";
+import { Container, Content, NewMovie } from "./styles";
 
-import { Header } from "./../../components/Header"
-import { Input } from "./../../components/Input"
-import { Note } from "./../../components/Note"
+import { api } from "../../services/api";
 
-import { api } from "../../services/api"
+import { Header } from "../../components/Header";
+import { Input } from "../../components/Input";
+import { Note } from "../../components/Note";
 
-import { FiPlus } from "react-icons/fi"
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+export function Home() {
+  const [notes, setNotes] = useState([]);
+  const [search, setSearch] = useState("");
 
-export function Home(){
-  
-  const [ notes, setNotes ] = useState([])
-  const [ search, setSearch ] = useState("")
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleDetails(id) {
-   navigate(`/details/${id}`)
+    navigate(`/details/${id}`);
   }
 
   useEffect(() => {
@@ -31,7 +29,7 @@ export function Home(){
     fetchNotes()
   }, [search])
 
-  return(
+  return (
     <Container>
       <Header>
         <Input
@@ -39,28 +37,36 @@ export function Home(){
           onChange={(e) => setSearch(e.target.value)}
         />
       </Header>
+
       <main>
-        <NewNote to="/new">
-          <button type="button">
+        <header>
+          <h1>Meus filmes</h1>
+
+          <NewMovie to="/new">
             <FiPlus />
-             Adicionar Nota
-            </button>
-          </NewNote>
-          <Content>
-            <section>
-              {
-                notes.map(note => (
-                  <Note
-                    key={String(note.id)}
-                    data={note}
-                    onClick={() => (handleDetails(note.id))}
-                  />
-                ))
-              }
-              
-            </section>
-          </Content>
+            Adicionar filme
+          </NewMovie>
+        </header>
+
+        <Content>
+          <section>
+          {
+            notes.length === 0 ? (
+              <h2>Nenhum filme adicionado</h2>
+            ) : (
+              notes.map((note) => (
+                <Note
+                  key={String(note.id)}
+                  data={note}
+                  onClick={() => handleDetails(note.id)}
+                />
+              ))
+            )}
+         
+            
+          </section>
+        </Content>
       </main>
     </Container>
-  )
+  );
 }

@@ -11,21 +11,22 @@ export const Container = styled.div`
   "content";
 
   > main {
+  
     grid-area: content;
-    
-    width: 1130px;
+    width: 100%;
+    max-width: 1350px;
     margin: 0 auto;
     overflow-y: auto;
 
     > section {
-      max-height: 90%;
+      max-height: 100%;
       overflow-y: auto;
       padding: 0 20px;
     }
 
     > section::-webkit-scrollbar {
       padding-top: 10px;
-      width: 6px;
+      width: 8px;
     }
 
     > section::-webkit-scrollbar-thumb {
@@ -41,7 +42,7 @@ export const Content = styled.div`
   
   margin: 40px auto;
   
-  >h1 {
+  > h1 {
     font-size: 36px;
     margin-bottom: 30px;
   }

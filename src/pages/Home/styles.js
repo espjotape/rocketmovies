@@ -1,72 +1,73 @@
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  
+  overflow-y: hidden;
+
   display: grid;
-  grid-template-rows: 110px auto ;
-  grid-template-areas: 
-  "header"
-  "content";
-  
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    "header"
+    "content";
+
   > main {
     grid-area: content;
-    margin: 0 123px;
-    
-    overflow-y: hidden;
-    padding-bottom: 10px;
+    width: 100%;
+    max-width: 1350px;
+    margin: 80px auto;
 
-  }   
-`
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 38px;
+
+      h1 {
+        font-weight: 400;
+        padding-left: 22px
+      }
+    }
+  }
+`;
+
 export const Content = styled.div`
- grid-area: content;
- overflow-y: auto;
-
-> section {
-  
-  max-height: 600px;
-  overflow-y: auto;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  gap:20px;
-}
-
-> section::-webkit-scrollbar {
-    width: 7px;
+   h2 {
+    text-align: center;
+    font-size: 32px;
   }
 
-> section::-webkit-scrollbar-thumb {
+  > section {
+    max-height: calc(80vh - 89.7px);
+    overflow-y: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+  > section::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  > section::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 8px;
   }
 `;
 
-export const NewNote = styled(Link)`
-  grid-area: content;
+export const NewMovie = styled(Link)`
+  background-color: ${({ theme }) => theme.COLORS.PINK};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+  border: none;
+
   display: flex;
-  width: 100%;
-  justify-content: flex-end;
-  margin-top:20px;
-  margin-bottom:20px;
-  height: 58px; 
-  
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
-  > button {
-    background-color: ${({ theme }) => theme.COLORS.PINK};
-    border: none;
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
-    border-radius: 10px;
-    
-    padding: 32px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-  }
-`
-
+  padding: 20px 32px;
+  border-radius: 8px;
+`;
