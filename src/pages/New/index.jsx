@@ -113,7 +113,7 @@ export function New(){
 
                   </div>
                   <section>
-                    <button className="delete" type="button"><p>Excluir filme</p></button>
+                    <button onClick={handleBack} className="delete" type="button"><p>Descartar Alterações</p></button>
                     <button onClick={handleNewNote} className="save" type="button"><p>Salvar alterações</p></button>
                   </section>
               </Footer>
