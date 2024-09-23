@@ -64,7 +64,38 @@ export const Content = styled.div`
           
           margin-right: 20px;
         }
-      } 
+      }
+    
+  }
+
+  > .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    > .delete{
+      border: none;
+      background: none;
+      width: 100%;
+      height: 56px;
+
+      background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+      color: ${({theme}) => theme.COLORS.PINK};
+      border-radius: 10px;
+    }
+    > .save{
+      border: none;
+      background: none;
+      width: 100%;
+      height: 56px;
+
+      background-color: ${({theme}) => theme.COLORS.PINK};
+      color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+      border-radius: 10px;
+    }
   }
 `
 export const Avatar = styled.div`

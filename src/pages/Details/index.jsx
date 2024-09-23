@@ -83,6 +83,10 @@ export default function Details(){
               <div className="text">
                 {data.description}
               </div>
+          <section className="btn">
+                    <button className="delete" type="button"><p>Excluir filme</p></button>
+                    <button className="save" type="button"><p>Editar Filme</p></button>
+                  </section>
             </Content>
           </div>
       </main>
