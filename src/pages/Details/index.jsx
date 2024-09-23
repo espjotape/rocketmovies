@@ -41,6 +41,14 @@ export default function Details(){
     fetchNotes()
   }, [params.id])
 
+  async function handleRemove(){
+    const confirm = window.confirm("Você quer realmente remover essa nota")
+    if(confirm) {
+      await api.delete(`/notes/${params.id}`)
+      navigate("/")
+    }
+
+  }
   return(
     <Container>
       <Header/>
@@ -84,7 +92,7 @@ export default function Details(){
                 {data.description}
               </div>
           <section className="btn">
-                    <button className="delete" type="button"><p>Excluir filme</p></button>
+                    <button onClick={handleRemove} className="delete" type="button"><p>Excluir filme</p></button>
                     <button className="save" type="button"><p>Editar Filme</p></button>
                   </section>
             </Content>
