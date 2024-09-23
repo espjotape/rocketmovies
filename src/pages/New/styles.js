@@ -5,16 +5,17 @@ export const Container = styled.div`
   height: 100vh;
 
   display: grid;
-  grid-template-rows: 105px auto;
+  grid-template-rows: 110px auto;
   grid-template-areas:
   "header"
   "content";
 
   > main {
     grid-area: content;
-    width: 1350px;
+    
+    width: 1130px;
     margin: 0 auto;
-    overflow-y: hidden;
+    overflow-y: auto;
 
     > section {
       max-height: 90%;
