@@ -10,15 +10,17 @@ import avatarPlaceholder from "../../assets/avatar_placeholder.svg";
 import { LuClock3  } from "react-icons/lu";
 import { FaArrowLeft } from "react-icons/fa";
 
+import moment from "moment-timezone";
+
 import { Header } from "../../components/Header"
 import { ButtonText } from "../../components/ButtonText"
 import { Tags } from "../../components/Tags"
-import { Section } from "../../components/Section"
 import { Rating } from "../../components/Rating";
 
 
 export default function Details(){
-  const [ data, setData ] = useState(null)
+  //const [ data, setData ] = useState(null) - Se der ruim é assim que estava antes
+  const [ data, setData ] = useState({})
 
   const navigate = useNavigate()
   const params = useParams()
@@ -27,6 +29,11 @@ export default function Details(){
   const avatarURL = user.avatar
   ? `${api.defaults.baseURL}/files/${user.avatar}`
   : avatarPlaceholder;
+
+  const formattedDate = moment
+  .utc(data.updated_at)
+  .tz("America/Sao_Paulo")
+  .format("DD/MM/YYYY HH:mm:ss")
 
 
   function handleBack(){
@@ -73,7 +80,7 @@ export default function Details(){
                     <p>Por: {user.name}</p>
                     
                     <LuClock3 />
-                    <p>23/05/22 às 08:00</p>
+                    <p>{formattedDate}</p>
                   </Avatar>
 
                   {
