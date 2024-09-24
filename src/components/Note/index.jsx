@@ -9,7 +9,7 @@ export function Note({ data, ...rest}){
       
       <Rating grade={data.rating} isbigSize={false}/>
 
-      <p>{data.paraghaph}</p>
+      <p>{data.description}</p>
       {
         data.tags &&
         <footer>
