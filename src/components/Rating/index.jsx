@@ -2,7 +2,7 @@ import { Container } from "./styles";
 
 import { VscStarFull, VscStarEmpty } from "react-icons/vsc";
 
-export function Rating({ grade, isbigSize }) {
+export function Rating({ grade, isBigSize  }) {
   const stars = [];
 
   for (let i = 1; i <= 5; i++) {
@@ -13,5 +13,5 @@ export function Rating({ grade, isbigSize }) {
     }
   }
 
-  return <Container isBigSize={isbigSize}>{stars}</Container>;
+  return <Container isBigSize={isBigSize }>{stars}</Container>;
 }
