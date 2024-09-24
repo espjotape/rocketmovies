@@ -33,7 +33,7 @@ export function New(){
     setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
 
-  async function handleNewNote(){
+   async function handleNewNote(){
 
     if (!title) {
       return alert("Digite um título para a nota!");

@@ -25,6 +25,8 @@ export default function Details(){
   const navigate = useNavigate()
   const params = useParams()
 
+  const { id } = useParams(); // Pega o id da URL
+
   const { user } = useAuth();
   const avatarURL = user.avatar
   ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -35,6 +37,9 @@ export default function Details(){
   .tz("America/Sao_Paulo")
   .format("DD/MM/YYYY HH:mm:ss")
 
+  function handleEdit(){
+    navigate(`/edit/${id}`)
+  }
 
   function handleBack(){
     navigate(-1)
@@ -56,6 +61,7 @@ export default function Details(){
     }
 
   }
+  
   return(
     <Container>
       <Header/>
@@ -100,7 +106,7 @@ export default function Details(){
               </div>
           <section className="btn">
                     <button onClick={handleRemove} className="delete" type="button"><p>Excluir filme</p></button>
-                    <button className="save" type="button"><p>Editar Filme</p></button>
+                    <button onClick={handleEdit} className="save" type="button"><p>Editar Filme</p></button>
                   </section>
             </Content>
           </div>
