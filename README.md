@@ -3,8 +3,8 @@
 <img src="./src/assets/Interface.png"/>
 
 <div align="center">
-  </br>
-  [Layout](https://www.figma.com/file/UObYagRzmvi5PY4HhmzEHM/RocketMovies/duplicate)
+
+ <a href="https://www.figma.com/file/gABt6gQNXzI3twzaUBs1jy/RocketMovies-(Copy)?type=design&node-id=0-1&t=f0C1HTYPvv4nqNWs-0" target="_blank">Layout!</a> 
 </div>
 
 
